@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+  <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoices</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    
+  </head>
+  <body>
+  <section>
+    <form action="/invoices" method="post">
+            <div class="form-group row">
+              <label for="invoice_number" class="col-sm-1 col-form-label">invoice_number</label>
+              <input type="number" id="invoice_number" name="invoice_number" required>
+            </div>
+            
+            <div class="form-group row">
+              <label for="total" class="col-sm-1 col-form-label">total</label>
+              <input type="number" id="total" name="total" step="0.01">
+            </div>
+
+            <div class="form-group row">
+                <label for="currency" class="col-sm-1 col-form-label">currency</label>
+                <input type="text" id="currency" name="currency">
+            </div>
+
+            <div class="form-group row">
+                <label for="invoice_date" class="col-sm-1 col-form-label">invoice_date</label>
+                <input type="date" id="invoice_date" name="invoice_date">
+            </div>
+
+            <div class="form-group row">
+                <label for="due_date" class="col-sm-1 col-form-label">due_date</label>
+                <input type="date" id="due_date" name="due_date">
+            </div>
+
+            <div class="form-group row">
+                <label for="vendor_name" class="col-sm-1 col-form-label">vendor_name</label>
+                <input type="text" id="vendor_name" name="vendor_name">
+            </div>
+            
+            <div class="form-group row">
+                <label for="remittance_name" class="col-sm-1 col-form-label">remittance_name</label>
+                <input type="text" id="remittance_name" name="remittance_name">
+            </div>
+
+            <div class="">
+                <label for="" class="col-sm-1 col-form-label"></label>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+   </section>
+
+   <% invoices.forEach(invoice => {%>
+
+   <div>
+     <ul>
+       <li>invoice #: <%= invoice.invoice_number%></li>
+       <li>total: <%= invoice.total%></li>
+       <li>currency: <%= invoice.currency%></li>
+     </ul>
+   </div>
+  
+  <% }) %>
+
+    <script src="" async defer></script>
+  </body>
+</html>
